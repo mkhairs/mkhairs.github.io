@@ -36,10 +36,29 @@ export const Experience: React.FC = () => {
 
             <div className="relative border-l border-slate-300 dark:border-white/15 ml-4 pl-6 space-y-8">
               
-              {/* Item 1 */}
+              {/* Item 1: Private Coding Tutor */}
               <div className="relative group">
                 <span className="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-[#e8702a] ring-4 ring-slate-50 dark:ring-black shadow-sm" />
                 <div className="flex items-center gap-2 text-xs font-mono text-[#e8702a]">
+                  <Calendar size={13} />
+                  <span>Jan 2026 – Present</span>
+                  <span>&bull;</span>
+                  <MapPin size={13} />
+                  <span>Mataram</span>
+                </div>
+                <h4 className="text-base font-semibold text-slate-900 dark:text-white mt-1">
+                  Private Coding Tutor
+                </h4>
+                <p className="text-xs text-slate-500 dark:text-white/55 font-medium">Prodigi Academy</p>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-white/65 mt-2 leading-relaxed">
+                  Delivering 1-on-1 programming lessons teaching computational logic, algorithms, and modular reasoning via ScratchJr and Scratch 3.
+                </p>
+              </div>
+
+              {/* Item 2: Practical Assistant */}
+              <div className="relative group">
+                <span className="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-400 dark:bg-white/40 group-hover:bg-[#e8702a] ring-4 ring-slate-50 dark:ring-black transition-colors" />
+                <div className="flex items-center gap-2 text-xs font-mono text-slate-400 dark:text-white/40">
                   <Calendar size={13} />
                   <span>2024 – 2026</span>
                   <span>&bull;</span>
@@ -54,25 +73,6 @@ export const Experience: React.FC = () => {
                   <li>Collaborated directly with faculty lecturers to develop laboratory curriculum and code test cases.</li>
                   <li>Mentored 200+ undergraduate students in Python, SQL, Wolfram Mathematica, and Tora optimization suite.</li>
                 </ul>
-              </div>
-
-              {/* Item 2 */}
-              <div className="relative group">
-                <span className="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-400 dark:bg-white/40 group-hover:bg-[#e8702a] ring-4 ring-slate-50 dark:ring-black transition-colors" />
-                <div className="flex items-center gap-2 text-xs font-mono text-slate-400 dark:text-white/40">
-                  <Calendar size={13} />
-                  <span>Jan 2026 – Present</span>
-                  <span>&bull;</span>
-                  <MapPin size={13} />
-                  <span>Mataram</span>
-                </div>
-                <h4 className="text-base font-semibold text-slate-900 dark:text-white mt-1">
-                  Private Coding Tutor
-                </h4>
-                <p className="text-xs text-slate-500 dark:text-white/55 font-medium">Prodigi Academy</p>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-white/65 mt-2 leading-relaxed">
-                  Delivering 1-on-1 programming lessons teaching computational logic, algorithms, and modular reasoning via ScratchJr and Scratch 3.
-                </p>
               </div>
 
               {/* Item 3 */}

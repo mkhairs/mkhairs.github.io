@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Bot, Gamepad2, TrendingUp, ExternalLink } from 'lucide-react';
+import { Bot, Gamepad2, TrendingUp, ExternalLink, CreditCard } from 'lucide-react';
 
 interface ProjectItem {
   label: string;
@@ -35,6 +35,36 @@ export const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
+      title: "Credit Card Fraud Detection with Hybrid Imbalance Handling",
+      category: 'ml',
+      categoryLabel: "Machine Learning & Imbalanced Classification",
+      githubUrl: "https://github.com/mkhairs/Credit-Card-Fraud-Detection-with-Hybrid-Imbalance-Handling",
+      summary: "Leakage-safe XGBoost fraud detection pipeline combining Mutual Information feature selection, SMOTE, and class-weighted cost optimization.",
+      items: [
+        {
+          label: "Model Development",
+          text: "Developed an XGBoost-based credit card fraud detection model for a highly imbalanced dataset containing approximately 0.17% fraudulent transactions."
+        },
+        {
+          label: "Imbalance Handling",
+          text: "Implemented a leakage-safe pipeline combining Mutual Information feature selection, IQR-based outlier capping, Random Undersampling, SMOTE, and cost-sensitive XGBoost with class weighting."
+        },
+        {
+          label: "Evaluation",
+          text: "Applied stratified 5-fold cross-validation and achieved 84.44% precision, 80.00% recall, 82.16% F1-score, and 80.91% PR-AUC on the untouched test set."
+        }
+      ],
+      tags: ["Python", "XGBoost", "SMOTE", "Imbalanced Learning", "Feature Selection", "PR-AUC"],
+      icon: <CreditCard size={22} />,
+      bgPattern: (
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-6 left-6 w-16 h-10 rounded-xl border border-slate-300 dark:border-white/10 bg-slate-200/50 dark:bg-white/5 backdrop-blur-[2px]" />
+          <div className="absolute top-8 left-10 w-4 h-3 rounded-sm bg-[#e8702a]/30" />
+          <div className="absolute bottom-4 right-6 w-20 h-20 rounded-full bg-[#e8702a]/15 blur-lg" />
+        </div>
+      )
+    },
+    {
       title: "Direct Multi-Horizon IHSG Forecasting",
       category: 'ml',
       categoryLabel: "Deep Learning & Time Series",
@@ -43,15 +73,15 @@ export const Projects: React.FC = () => {
       items: [
         {
           label: "Model Development",
-          text: "Developed a direct multi-horizon Gated Temporal GRU to forecast IHSG Close prices for the next five trading days simultaneously using a 20-day historical look-back."
+          text: "Developed a direct multi-horizon Gated Temporal GRU to forecast IHSG closing prices for the next five trading days simultaneously using a 20-day historical look-back window."
         },
         {
           label: "Architecture",
-          text: "Designed a single-layer GRU for sequential Close prices with an auxiliary SMA/EMA branch using SMA₂₀, SMA₄₀, EMA₂₀, and EMA₄₀, combined through a learnable sigmoid gate for adaptive feature fusion."
+          text: "Designed a single-layer GRU for sequential closing prices with an auxiliary SMA/EMA branch using SMA₂₀, SMA₄₀, EMA₂₀, and EMA₄₀, combined through a learnable sigmoid gate for adaptive feature fusion."
         },
         {
           label: "Evaluation",
-          text: "Implemented leakage-safe chronological train/validation/test splitting and achieved an overall test MAE of 100.08, RMSE of 147.97, and MAPE of 1.396%, with one-day-ahead MAPE of 0.808%."
+          text: "Implemented a leakage-safe chronological train/validation/test split and achieved a test MAE of 100.08, RMSE of 147.97, and MAPE of 1.396%, with a one-day-ahead MAPE of 0.808%."
         }
       ],
       tags: ["Python", "PyTorch", "GRU", "Time Series", "Feature Fusion", "IHSG"],
@@ -69,11 +99,11 @@ export const Projects: React.FC = () => {
       category: 'ml',
       categoryLabel: "Machine Learning & Deep Learning",
       githubUrl: "https://github.com/mkhairs/Resume-Screening-and-Candidate-Selection-Prediction",
-      summary: "Custom Residual Neural Network vs. XGBoost benchmark for automated candidate-selection prediction with threshold optimization.",
+      summary: "Custom Residual Neural Network vs. XGBoost benchmark for binary candidate-selection prediction using resume-related features.",
       items: [
         {
           label: "Model Development",
-          text: "Developed and compared XGBoost and a custom Residual Neural Network for binary candidate-selection prediction from resume-related features."
+          text: "Developed and compared XGBoost and a custom Residual Neural Network for binary candidate-selection prediction using resume-related features."
         },
         {
           label: "Architecture & Training",
@@ -99,15 +129,15 @@ export const Projects: React.FC = () => {
       category: 'game',
       categoryLabel: "Game Development & OOP",
       githubUrl: "https://github.com/mkhairs/alien-space-invader",
-      summary: "Object-Oriented 2D arcade shooter built from scratch in Pygame featuring real-time collision detection and dynamic difficulty scaling.",
+      summary: "Classic 2D arcade shooter built with Python and Object-Oriented Programming to manage player ships, aliens, and projectiles.",
       items: [
         {
           label: "Development",
-          text: "Developed a classic 2D shooter game using Python, utilizing Object-Oriented Programming (OOP) to manage game entities (ship, aliens, bullets)."
+          text: "Developed a classic 2D shooter game using Python and Object-Oriented Programming to manage game entities such as the player ship, aliens, and projectiles."
         },
         {
           label: "Mechanics",
-          text: "Implemented core game mechanics including collision detection algorithms, dynamic enemy movement, score tracking, and user input handling."
+          text: "Implemented collision detection, dynamic enemy movement, score tracking, projectile handling, and keyboard-based player controls."
         }
       ],
       tags: ["Python", "Pygame", "OOP", "Collision Detection", "Game Dev"],
@@ -205,13 +235,13 @@ export const Projects: React.FC = () => {
           </div>
         </div>
 
-        {/* Projects Grid with Staggered Cascading Animation */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* 2x2 Projects Grid with Staggered Cascading Animation */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredProjects.map((proj, idx) => (
             <div 
               key={`${filter}-${proj.title}`}
               style={{ animationDelay: `${idx * 80}ms` }}
-              className="group rounded-[2.4rem] liquid-glass p-7 flex flex-col justify-between transition-all duration-500 hover:border-[#e8702a]/50 hover:-translate-y-2 shadow-xl project-card-anim"
+              className="group rounded-[2.4rem] liquid-glass p-7 sm:p-8 flex flex-col justify-between transition-all duration-500 hover:border-[#e8702a]/50 hover:-translate-y-2 shadow-xl project-card-anim"
             >
               <div>
                 {/* Abstract Visual Header */}

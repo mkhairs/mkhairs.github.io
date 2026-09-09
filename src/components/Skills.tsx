@@ -1,58 +1,61 @@
 import React from 'react';
-import { Cpu, Code, Sigma, Languages } from 'lucide-react';
+import { Database, LineChart, Sigma, Languages } from 'lucide-react';
 
 export const Skills: React.FC = () => {
   const skillCategories = [
     {
-      title: "Machine Learning Stack",
-      icon: <Cpu size={20} className="text-[#e8702a]" />,
-      skills: [
-        "PyTorch",
-        "TensorFlow",
-        "GRU / RNN",
-        "XGBoost",
-        "Optuna (TPE)",
-        "LangChain",
-        "RAG",
-        "NLP",
-        "Scikit-Learn",
-        "Time-Series Forecasting"
-      ]
-    },
-    {
-      title: "Code & Infrastructure",
-      icon: <Code size={20} className="text-[#e8702a]" />,
+      title: "Machine Learning & Data Science",
+      icon: <LineChart size={20} className="text-[#e8702a]" />,
       skills: [
         "Python",
-        "SQL (MySQL)",
-        "LaTeX",
-        "Docker",
-        "Git / GitHub",
-        "Pygame (OOP)",
-        "FastAPI",
-        "NumPy & Pandas"
+        "PyTorch",
+        "XGBoost",
+        "Scikit-Learn",
+        "Optuna (TPE)",
+        "Time-Series Forecasting",
+        "Regression Analysis",
+        "Data Preprocessing",
+        "SMOTE / Imbalance",
+        "GRU / Neural Networks"
       ]
     },
     {
-      title: "Mathematics & Analysis",
+      title: "Data, SQL & Infrastructure",
+      icon: <Database size={20} className="text-[#e8702a]" />,
+      skills: [
+        "SQL (MySQL)",
+        "Pandas & NumPy",
+        "Microsoft Excel",
+        "Relational Databases",
+        "Docker",
+        "Git / GitHub",
+        "FastAPI",
+        "LaTeX"
+      ]
+    },
+    {
+      title: "Quantitative & Mathematical Analysis",
       icon: <Sigma size={20} className="text-[#e8702a]" />,
       skills: [
         "Operations Research",
         "Linear Programming",
-        "Graph Theory",
-        "Topological Indices",
-        "Wolfram Mathematica",
+        "Mathematical Modeling",
         "Numerical Methods",
+        "Graph Theory",
         "SPSS",
+        "Wolfram Mathematica",
         "Tora Software"
       ]
     },
     {
-      title: "Languages",
+      title: "Communication & Languages",
       icon: <Languages size={20} className="text-[#e8702a]" />,
       skills: [
+        "English (Professional Working)",
         "Indonesian (Native)",
-        "English (Professional Working)"
+        "Microsoft PowerPoint",
+        "KPI & Metric Reporting",
+        "Technical Documentation"
       ]
     }
   ];
@@ -73,10 +76,10 @@ export const Skills: React.FC = () => {
             Technical Proficiency
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-[-0.06em] leading-tight text-slate-900 dark:text-white">
-            Core toolkit & <span className="font-playfair italic font-normal">engineering</span> stack.
+            Core analytical & <span className="font-playfair italic font-normal">data science</span> stack.
           </h2>
           <p className="text-slate-600 dark:text-white/70 text-base leading-relaxed">
-            Technologies, libraries, and analytical frameworks utilized in real-world ML modeling and applied research.
+            Technologies, statistical frameworks, and data modeling tools utilized in quantitative analysis, predictive modeling, and applied research.
           </p>
         </div>
 

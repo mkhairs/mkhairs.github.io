@@ -331,7 +331,7 @@ export const Hero: React.FC = () => {
             className="block font-normal text-5xl sm:text-7xl md:text-8xl -mt-1 hero-anim hero-reveal text-white"
             style={{ letterSpacing: '-0.08em', animationDelay: '0.42s' }}
           >
-            with AI engineering
+            with data science
           </span>
         </h1>
       </div>
@@ -344,7 +344,7 @@ export const Hero: React.FC = () => {
         <div className="p-5 rounded-[1.8rem] liquid-glass shadow-2xl">
           <p className="text-xs font-mono text-[#e8702a] uppercase tracking-wider mb-1.5 font-bold">Muhammad Khair Syawaludin</p>
           <p className="text-xs text-slate-700 dark:text-white/90 leading-relaxed">
-            Mathematics graduate (GPA 3.61/4.00) engineering deep learning models, GRU architectures, optimization algorithms, and end-to-end ML workflows.
+            Mathematics graduate (GPA 3.61/4.00) specializing in statistical analysis, machine learning models, time-series forecasting, and data-driven business insights.
           </p>
         </div>
       </div>
@@ -356,7 +356,7 @@ export const Hero: React.FC = () => {
       >
         <div className="p-5 rounded-[1.8rem] liquid-glass shadow-2xl w-full">
           <p className="text-xs text-slate-700 dark:text-white/90 leading-relaxed mb-3.5">
-            Explore 98.27% accuracy Bitcoin GRU research, registered software copyright, and PyTorch / LangChain projects.
+            Explore 98.27% accuracy Bitcoin GRU research, credit fraud analytics, and quantitative modeling projects.
           </p>
           <div className="flex items-center gap-2">
             <a 

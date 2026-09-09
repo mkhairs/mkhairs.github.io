@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
               <BrandLogo showSubtitle={true} />
             </a>
             <p className="text-xs sm:text-sm text-slate-400 dark:text-white/55 leading-relaxed">
-              Mathematics graduate & AI engineer specializing in GRU sequential forecasting, mathematical optimization, and deep learning architectures.
+              Mathematics graduate & Data Analyst / Data Scientist specializing in statistical modeling, machine learning pipelines, time-series forecasting, and quantitative analytics.
             </p>
           </div>
 

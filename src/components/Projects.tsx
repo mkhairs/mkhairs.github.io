@@ -189,13 +189,13 @@ export const Projects: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 reveal">
           <div className="max-w-2xl flex flex-col items-start gap-4">
             <span className="text-xs uppercase tracking-[0.3em] text-[#e8702a] font-semibold">
-              Engineering Portfolio
+              Data Science & Analytics Portfolio
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-[-0.06em] leading-tight text-slate-900 dark:text-white">
-              Featured deep learning & <span className="font-playfair italic font-normal">software</span> projects.
+              Featured machine learning & <span className="font-playfair italic font-normal">quantitative</span> projects.
             </h2>
             <p className="text-slate-600 dark:text-white/70 text-base leading-relaxed">
-              Production-grade PyTorch models, time-series forecasting architectures, and Python software engineering.
+              Predictive classification pipelines, multi-horizon time-series forecasting, and data analysis algorithms.
             </p>
           </div>
 

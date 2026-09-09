@@ -40,7 +40,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         </span>
         {showSubtitle && (
           <span className="text-[10px] sm:text-[11px] text-slate-500 dark:text-white/50 font-mono uppercase tracking-[0.22em] mt-0.5">
-            AI Engineer &bull; Math
+            Data Science &bull; Analytics
           </span>
         )}
       </div>

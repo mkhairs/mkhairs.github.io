@@ -25,7 +25,7 @@ export const About: React.FC = () => {
             About Muhammad Khair Syawaludin
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-[-0.06em] leading-[1.08] text-slate-900 dark:text-white mt-3 max-w-3xl">
-            Bridging pure mathematics with <span className="font-playfair italic font-normal">practical</span> AI engineering.
+            Bridging pure mathematics with <span className="font-playfair italic font-normal">data science</span> and analytics.
           </h2>
         </div>
 
@@ -44,7 +44,7 @@ export const About: React.FC = () => {
                 {/* Status Badge */}
                 <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 dark:bg-emerald-500/25 border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono shadow-sm backdrop-blur-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span>AI Engineer</span>
+                  <span>Data Science / Analytics</span>
                 </div>
 
                 {/* Full-bleed Photo */}
@@ -79,10 +79,10 @@ export const About: React.FC = () => {
           <div className="lg:col-span-8 flex flex-col items-start gap-8">
             <div className="space-y-4 text-slate-600 dark:text-white/75 text-base sm:text-lg leading-relaxed reveal delay-200">
               <p>
-                With a solid foundation in pure and applied mathematics (Operations Research, Numerical Analysis, Graph Theory), I bring a deeply analytical perspective to Artificial Intelligence and Machine Learning.
+                Mathematics graduate (GPA 3.61/4.00) with proven expertise in Python-based data processing, statistical analysis, quantitative model evaluation, and machine learning architectures.
               </p>
               <p className="text-sm sm:text-base text-slate-500 dark:text-white/65">
-                Rather than treating deep learning models as black boxes, my research and engineering work focuses on mathematical optimization, objective loss shaping (such as Huber Loss with NADAM), and hyperparameter search via Optuna TPE.
+                Guided more than 200 students in programming, relational databases, and mathematical modeling, supported credit data processing during a banking internship, and engineered high-precision predictive models (XGBoost, GRU) to extract actionable intelligence and support data-driven business decisions.
               </p>
             </div>
 
@@ -138,8 +138,8 @@ export const About: React.FC = () => {
                   <Brain size={16} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Deep Learning & GRU</h4>
-                  <p className="text-xs text-slate-500 dark:text-white/60 mt-0.5">Sequential modeling, time-series forecasting, Optuna TPE tuning.</p>
+                  <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Predictive Modeling & ML</h4>
+                  <p className="text-xs text-slate-500 dark:text-white/60 mt-0.5">XGBoost classification, time-series forecasting, regression analysis, Optuna tuning.</p>
                 </div>
               </div>
 
@@ -148,8 +148,8 @@ export const About: React.FC = () => {
                   <Calculator size={16} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Mathematical Modeling</h4>
-                  <p className="text-xs text-slate-500 dark:text-white/60 mt-0.5">Operations research, linear programming, graph topological indices.</p>
+                  <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Quantitative Analysis & SQL</h4>
+                  <p className="text-xs text-slate-500 dark:text-white/60 mt-0.5">Operations research, relational databases, statistical testing, KPI dashboards.</p>
                 </div>
               </div>
             </div>

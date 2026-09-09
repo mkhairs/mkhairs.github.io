@@ -318,7 +318,7 @@ export const Hero: React.FC = () => {
       <div className="absolute top-[14%] sm:top-[16%] left-0 right-0 flex flex-col items-center text-center px-5 pointer-events-none z-50">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono bg-white/90 dark:bg-black/50 border border-slate-200 dark:border-white/20 backdrop-blur-md text-slate-900 dark:text-white/95 mb-4 hero-anim hero-fade shadow-lg" style={{ animationDelay: '0.1s' }}>
           <span className="w-2 h-2 rounded-full bg-[#e8702a] animate-ping"></span>
-          <span>Open to AI / Machine Learning Roles</span>
+          <span>Open to Data Analyst / Data Science Roles</span>
         </div>
         <h1 className="text-white leading-[0.95] drop-shadow-lg">
           <span 

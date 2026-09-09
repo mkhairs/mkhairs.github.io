@@ -40,7 +40,7 @@ export const CTA: React.FC = () => {
 
           {/* Paragraph */}
           <p className="relative z-10 mt-6 text-slate-600 dark:text-white/70 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-            Currently open to full-time AI Engineer & ML positions, research opportunities, and predictive modeling initiatives.
+            Currently open to full-time Data Analyst, Data Science & AI/ML positions, research opportunities, and quantitative modeling initiatives.
           </p>
 
           {/* Button & Link Group */}

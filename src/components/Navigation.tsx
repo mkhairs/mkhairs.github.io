@@ -37,7 +37,7 @@ export function Navigation() {
     return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', schedule); window.removeEventListener('resize', schedule); };
   }, []);
   useEffect(() => {
-    const desktop = window.matchMedia('(min-width: 1170px)');
+    const desktop = window.matchMedia('(min-width: 768px)');
     const closeOnDesktop = () => { if (desktop.matches) setMenuOpen(false); };
     desktop.addEventListener('change', closeOnDesktop);
     return () => desktop.removeEventListener('change', closeOnDesktop);

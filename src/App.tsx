@@ -1,43 +1,20 @@
-import React from 'react';
-import { ThemeProvider } from './context/ThemeContext';
+import './liquid-glass.css';
 import { useScrollReveal } from './hooks/useScrollReveal';
+import { ThemeProvider } from './context/ThemeContext';
+import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Thesis } from './components/Thesis';
 import { Projects } from './components/Projects';
-import { Publications } from './components/Publications';
+import { Thesis } from './components/Thesis';
+import { About } from './components/About';
 import { Experience } from './components/Experience';
+import { Publications } from './components/Publications';
 import { Skills } from './components/Skills';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
 
-function PortfolioApp() {
+export default function App() {
   useScrollReveal();
-
-  return (
-    <div 
-      className="min-h-screen bg-white dark:bg-black text-slate-900 dark:text-white tracking-[-0.02em] transition-colors duration-300 overflow-x-hidden" 
-      style={{ fontFamily: "'Inter', sans-serif" }}
-    >
-      <Hero />
-      <About />
-      <Thesis />
-      <Projects />
-      <Publications />
-      <Experience />
-      <Skills />
-      <CTA />
-      <Footer />
-    </div>
-  );
+  return <ThemeProvider><a href="#main-content" className="skip-link">Skip to content</a><Navigation />
+    <main id="main-content" tabIndex={-1}><Hero /><About /><Projects /><Thesis /><Experience /><Publications /><Skills /><CTA /></main><Footer />
+  </ThemeProvider>;
 }
-
-function App() {
-  return (
-    <ThemeProvider>
-      <PortfolioApp />
-    </ThemeProvider>
-  );
-}
-
-export default App;

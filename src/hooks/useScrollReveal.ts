@@ -1,45 +1,50 @@
 import { useEffect } from 'react';
 
-export const useScrollReveal = () => {
+export function useScrollReveal() {
   useEffect(() => {
-    const observerCallback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!('IntersectionObserver' in window)) return;
+    const seen = new WeakSet<Element>();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -24px 0px' });
+    const scan = () => {
+      document.querySelectorAll<HTMLElement>('.reveal').forEach(element => {
+        if (seen.has(element)) return;
+        seen.add(element);
+        if (media.matches) element.classList.add('active');
+        else {
+          element.classList.add('reveal-ready');
+          observer.observe(element);
         }
       });
     };
-
-    const observer = new IntersectionObserver(observerCallback, {
-      root: null,
-      rootMargin: '0px 0px -40px 0px',
-      threshold: 0.05,
-    });
-
-    const observeAll = () => {
-      const revealElements = document.querySelectorAll('.reveal');
-      revealElements.forEach((el) => {
-        if (!el.classList.contains('active')) {
-          observer.observe(el);
-        }
-      });
+    const disableMotion = () => {
+      if (media.matches) {
+        document.querySelectorAll('.reveal').forEach(element => element.classList.add('active'));
+        observer.disconnect();
+      }
     };
-
-    observeAll();
-
-    // Observe dynamic DOM changes so new elements are automatically revealed
-    const mutationObserver = new MutationObserver(() => {
-      observeAll();
-    });
-
-    mutationObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-
+    // Keyboard focus must never enter a visually hidden card.
+    const revealFocused = (event: FocusEvent) => {
+      if (event.target instanceof HTMLElement) event.target.closest('.reveal')?.classList.add('active');
+    };
+    scan();
+    const mutations = new MutationObserver(scan);
+    const main = document.querySelector('main');
+    if (main) mutations.observe(main, { childList: true, subtree: true });
+    media.addEventListener('change', disableMotion);
+    document.addEventListener('focusin', revealFocused);
     return () => {
-      observer.disconnect();
-      mutationObserver.disconnect();
+      observer.disconnect(); mutations.disconnect();
+      document.querySelectorAll('.reveal-ready').forEach(element => element.classList.remove('reveal-ready'));
+      media.removeEventListener('change', disableMotion);
+      document.removeEventListener('focusin', revealFocused);
     };
   }, []);
-};
+}

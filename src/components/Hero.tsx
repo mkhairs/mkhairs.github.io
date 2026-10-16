@@ -13,16 +13,16 @@ export function Hero() {
       <RevealLayer image={BG_IMAGE_2} cursorX={cursor.x} cursorY={cursor.y} />
       <div className="hero-shade" aria-hidden="true" />
       <div className="hero-heading">
-        <p className="hero-status liquid-nav"><span className="availability-dot" />Open to Data Analyst / Data Science Roles</p>
-        <h1 id="hero-title"><span className="font-playfair">Analytical rigor</span><span>with data science</span></h1>
+        <p className="hero-status liquid-nav"><span className="availability-dot" />Open to AI / Data Science &amp; Quantitative Roles</p>
+        <h1 id="hero-title"><span className="font-playfair">Analytical rigor</span><span>with artificial intelligence</span></h1>
       </div>
       <div className="hero-information">
         <div className="hero-bio liquid-glass">
           <p className="eyebrow">Muhammad Khair Syawaludin</p>
-          <p>Mathematics graduate (GPA 3.61/4.00) specializing in statistical analysis, machine learning models, time-series forecasting, and data-driven business insights.</p>
+          <p>Mathematics graduate (GPA 3.61/4.00) specializing in statistical analysis, physics-informed neural networks, time-series forecasting, and applied AI systems.</p>
         </div>
         <div className="hero-actions liquid-glass">
-          <p>Explore 98.27% reported accuracy Bitcoin GRU research, credit fraud analytics, and quantitative modeling projects.</p>
+          <p>Explore 98.27% accuracy Bitcoin GRU research, inverse PINNs, topological market analysis, and peer-reviewed publications.</p>
           <div className="button-row"><a href="#thesis" className="button primary">Explore Research<ArrowRight size={17} /></a><a href="#projects" className="button secondary">Projects<ArrowUpRight size={17} /></a></div>
         </div>
       </div>

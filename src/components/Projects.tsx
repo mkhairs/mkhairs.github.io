@@ -1,11 +1,18 @@
 import { useState } from 'react';
-import { ArrowUpRight, ArrowRight, Bot, CreditCard, Gamepad2, TrendingUp, X, CodeXml } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Bot, CreditCard, Gamepad2, TrendingUp, X, CodeXml, Activity, Network } from 'lucide-react';
 import { projects, projectFilters, filterProjects, type Project, type ProjectFilter } from '../data/projects';
 import { useModal } from '../hooks/useModal';
 import { useSlidingPill } from '../hooks/useSlidingPill';
 import { SectionHeading } from './SectionHeading';
 
-const icons = { 'credit-card-fraud': CreditCard, 'ihsg-forecasting': TrendingUp, 'resume-screening': Bot, 'alien-space-invader': Gamepad2 };
+const icons: Record<string, typeof CreditCard> = {
+  'pinn-lorenz': Activity,
+  'ihsg-tda-kmeans': Network,
+  'credit-card-fraud': CreditCard,
+  'ihsg-forecasting': TrendingUp,
+  'resume-screening': Bot,
+  'alien-space-invader': Gamepad2,
+};
 
 function ProjectDetails({ project, onClose }: { project: Project | null; onClose: () => void }) {
   const dialog = useModal(Boolean(project));
@@ -27,10 +34,10 @@ export function Projects() {
   const filtered = filterProjects(filter);
   const { containerRef, style: pillStyle } = useSlidingPill(filter);
   return <section id="projects" className="section section-shell">
-    <SectionHeading number="03" label="SELECTED WORK" title="Built with purpose.">From imbalanced datasets to market forecasting. Explore the problems, methods, and results behind my work.</SectionHeading>
+    <SectionHeading number="03" label="SELECTED WORK" title="Built with purpose.">From physics-informed neural networks to market regime topology and forecasting. Explore the problems, methods, and results behind my work.</SectionHeading>
     <div className="project-toolbar"><div className="project-filters liquid-nav" ref={containerRef} role="group" aria-label="Filter projects"><span className="sliding-pill" style={pillStyle} aria-hidden="true" />{projectFilters.map(({ id, label }) => <button key={id} aria-pressed={filter === id} onClick={() => setFilter(id)}>{label}<span>{filterProjects(id).length}</span></button>)}</div><p className="result-count mono" role="status">{filtered.length} {filtered.length === 1 ? 'project' : 'projects'}</p></div>
     <div className="project-grid">{filtered.map((project, index) => {
-      const Icon = icons[project.id as keyof typeof icons];
+      const Icon = icons[project.id] || CodeXml;
       return <article key={project.id} className="project-card liquid-glass reveal" style={{ transitionDelay: `${index * 80}ms` }}>
         <div className="project-topline"><span className="project-icon"><Icon size={23} /></span><span className="mono">0{projects.indexOf(project) + 1}</span></div>
         <p className="eyebrow project-category">{project.categoryLabel}</p>

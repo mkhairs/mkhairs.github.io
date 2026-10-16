@@ -34,7 +34,7 @@ export function Projects() {
   const filtered = filterProjects(filter);
   const { containerRef, style: pillStyle } = useSlidingPill(filter);
   return <section id="projects" className="section section-shell">
-    <SectionHeading number="03" label="SELECTED WORK" title="Built with purpose.">From physics-informed neural networks to market regime topology and forecasting. Explore the problems, methods, and results behind my work.</SectionHeading>
+    <SectionHeading number="04" label="SELECTED WORK" title="Built with purpose.">From physics-informed neural networks to market regime topology and forecasting. Explore the problems, methods, and results behind my work.</SectionHeading>
     <div className="project-toolbar"><div className="project-filters liquid-nav" ref={containerRef} role="group" aria-label="Filter projects"><span className="sliding-pill" style={pillStyle} aria-hidden="true" />{projectFilters.map(({ id, label }) => <button key={id} aria-pressed={filter === id} onClick={() => setFilter(id)}>{label}<span>{filterProjects(id).length}</span></button>)}</div><p className="result-count mono" role="status">{filtered.length} {filtered.length === 1 ? 'project' : 'projects'}</p></div>
     <div className="project-grid">{filtered.map((project, index) => {
       const Icon = icons[project.id] || CodeXml;

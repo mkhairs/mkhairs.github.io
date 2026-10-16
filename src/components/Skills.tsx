@@ -1,63 +1,44 @@
-import { Database, LineChart, Sigma, Languages } from 'lucide-react';
+import { Brain, CodeXml, Sigma } from 'lucide-react';
 import { SectionHeading } from './SectionHeading';
 
 const categories = [
   {
-    title: 'Machine Learning & AI Engineering',
-    icon: LineChart,
+    title: 'Artificial Intelligence & Machine Learning',
+    icon: Brain,
     skills: [
-      'Python',
       'PyTorch',
-      'PINNs (Physics-Informed)',
+      'Physics-Informed Neural Networks (PINNs)',
+      'Gated Recurrent Unit (GRU)',
       'XGBoost',
       'Scikit-Learn',
-      'Optuna (TPE Tuning)',
-      'Time-Series (GRU)',
-      'LangChain & RAG',
-      'LLMs & Prompt Engineering',
       'Topological Data Analysis (TDA)',
-      'SMOTE / Imbalanced Learning',
+      'Optuna (TPE Tuning)',
+      'Time-Series Forecasting',
     ],
   },
   {
-    title: 'Data, SQL & Tools',
-    icon: Database,
+    title: 'Python Ecosystem & Data',
+    icon: CodeXml,
     skills: [
+      'Python',
+      'NumPy & SciPy',
+      'Pandas',
       'SQL (MySQL)',
-      'Pandas & NumPy',
-      'Microsoft Excel',
-      'Relational Databases',
-      'Docker & AI Deployment',
+      'Pygame',
       'Git / GitHub',
-      'LaTeX',
-      'Workflow Automation',
     ],
   },
   {
-    title: 'Mathematical & Quantitative Modeling',
+    title: 'Mathematics & Quantitative Modeling',
     icon: Sigma,
     skills: [
-      'Operations Research',
-      'Linear Programming',
       'Mathematical Modeling',
       'Numerical Methods',
-      'Graph Theory & Algorithms',
-      'Genetic Algorithms',
-      'SPSS',
+      'Operations Research',
+      'Linear Programming',
+      'Graph Theory',
       'Wolfram Mathematica',
-      'Tora Software',
-    ],
-  },
-  {
-    title: 'Communication & Languages',
-    icon: Languages,
-    skills: [
-      'English (Professional Working)',
-      'Indonesian (Native)',
-      'Technical Documentation',
-      'Academic Writing & Research',
-      'Microsoft PowerPoint',
-      'Course Curriculum Development',
+      'LaTeX',
     ],
   },
 ];
@@ -65,8 +46,8 @@ const categories = [
 export function Skills() {
   return (
     <section id="skills" className="section section-shell">
-      <SectionHeading number="07" label="THE TOOLKIT" title="Tools for thoughtful work.">
-        The languages, frameworks, and mathematical methods I use to move from a question to an answer.
+      <SectionHeading number="07" label="THE TOOLKIT" title="Focused on math, Python, and AI.">
+        Core technical proficiencies applied across research, machine learning pipelines, and quantitative models.
       </SectionHeading>
       <div className="skills-grid">
         {categories.map(({ title, icon: Icon, skills }) => (
